@@ -31,10 +31,19 @@ namespace Dictionary_Case_Task
                     case 1:
                         Console.WriteLine("Enter student ID of the new student: ");
                         int ID = int.Parse(Console.ReadLine());
-                        Console.WriteLine("Enter student's name for that ID :");
+
+                        if (students.ContainsKey(ID))
+                        {
+                        Console.WriteLine("A student with this ID already exists.");
+                        }
+                        else
+                        {
+                        Console.WriteLine("Enter student's name for that ID:");
                         string name = Console.ReadLine();
+
                         students.Add(ID, name);
-                        Console.WriteLine("Done!");
+                        Console.WriteLine($"Student {name} has been added successfully.");
+                        }
                         break;
 
                     case 2:
